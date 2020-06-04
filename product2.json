@@ -1,0 +1,8 @@
+{
+  "name": "Shop Agency",
+  "description": "Providing the travels as a service",
+  "type": "SERVICE",
+  "category": "ACCESSORIES",
+  "image_url": "https://example.com/streaming.jpg",
+  "home_url": "https://example.com/home"
+}
