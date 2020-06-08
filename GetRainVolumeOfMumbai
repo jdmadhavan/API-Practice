@@ -1,0 +1,70 @@
+
+public class TC02GetRainVolumeOfMumbai extends RESTAssuredBase{
+	
+ // http://api.openweathermap.org/data/2.5/ - domain from RESTAssuredBase using config file
+  
+	double volume;
+	@BeforeTest
+	public void setValues() {
+		testCaseName = "Get Rain Volume of Mumbai";
+		testDescription = "Last 3 days Rain Volume of Mumbai";
+		nodes = "Rain Volume";
+		authors = "Madhavan";
+		category = "API";
+	}
+
+	@Test()
+	public void getCityWeatherDetails() throws ParseException {		
+	
+		long startDate = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+				.parse("06/08/2020 10:33:14").getTime() / 1000;
+		
+		long endDate = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+				.parse("06/05/2020 00:00:00").getTime() / 1000;
+		
+		Map<String,String> parameterRequest=new HashMap<String, String>();
+		parameterRequest.put("lon","72.8777");
+		parameterRequest.put("lat","19.0760");
+		//parameterRequest.put("start","1591362395");
+		//parameterRequest.put("end","1591621595");
+		
+		parameterRequest.put("start",String.valueOf(startDate));
+		parameterRequest.put("end",String.valueOf(endDate));
+		parameterRequest.put("appid", "01bca4841fa478520c64a12db004f782");
+		
+		// Post the request
+		Response response = postWithQueryParam(parameterRequest, "onecall");
+	
+  // Verify the response status code
+		verifyResponseCode(response, 200);	
+		
+		JsonPath jsonPath = response.jsonPath();
+		List<Object> list = jsonPath.getList("hourly");
+		System.out.println("size"+list.size());	
+		
+		for(int i=0;i<list.size()-1;i++)
+		{		
+	
+		Float val = jsonPath.get("hourly["+i+"].rain.1h");
+			
+	    if(val!=null)
+	    {
+	    	System.out.println("Last 3 days Hourly Rain Data:"+val);
+	    	volume=volume+val;
+	    }
+		
+		}
+		
+		System.out.println("***************************************************");
+		
+		System.out.println("Rain Volume in Mumbai for Last 3 days(MM): "+volume);
+		
+		System.out.println("***************************************************");
+		
+	}	
+	
+}
+
+
+
+
