@@ -12,7 +12,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class TC10_BestBuy_InstockAvailabilityCheckInRIRegion {
+public class TC11_BestBuy_InstockAvailabilityCheckInRIRegion {
 
 	public static void main(String[] args) {
 
