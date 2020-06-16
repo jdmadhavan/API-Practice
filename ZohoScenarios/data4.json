@@ -1,0 +1,45 @@
+{
+    "display_name": "Mathews Garden",
+    "salutation": "Mr.",
+    "first_name": "Madhavan",
+    "last_name": "Ramalingam",
+    "email": "mdn@gmail.com",
+   
+
+    "company_name": "TATA",
+    "phone": 23467278,
+    "mobile": 938237475,
+    "department": "Marketing",
+    "designation": "Evangelist",
+    "website": "www.bowmanfurniture.com",
+    "billing_address": {
+        "attention": "Benjamin George",
+        "street": "Harrington Bay Street",
+        "city": "Salt Lake City",
+        "state": "CA",
+        "zip": 92612,
+        
+        "fax": 4527389
+    },
+    "shipping_address": {
+        "attention": "Second",
+        "street": "Second Bay Street",
+        "city": "Chennai",
+        "state": "TN",
+        "zip": 610206,
+        
+        "fax": 4527389
+    },
+    "payment_terms": 5,
+    "payment_terms_label": "Due on receipt",
+    "currency_code": "USD",
+    "ach_supported": true,
+    "twitter": "BowmanFurniture",
+    "facebook": "BowmanFurniture",
+    "skype": "Bowman Furniture",
+    "notes": "Bowman Furniture",
+    "is_portal_enabled": true,
+    
+    "gst_treatment": "business_gst"
+  
+}
