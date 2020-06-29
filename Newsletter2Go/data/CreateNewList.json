@@ -1,0 +1,16 @@
+{
+  "name": "List One",
+  "uses_econda": false,
+  "uses_googleanalytics": true,
+  "has_opentracking": true,
+  "has_clicktracking": true,
+  "has_conversiontracking": false,
+  "imprint": "http://example.org/imprint",
+  "header_from_email": "from@example.org",
+  "header_from_name": "From Name",
+  "header_reply_email": "reply@example.org",
+  "header_reply_name": "Reply Name",
+  "tracking_url": null,
+  "landingpage": "http://example.org/unsubscribe-landingpage",
+  "use_ecg_list": false
+}
