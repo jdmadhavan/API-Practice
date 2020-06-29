@@ -28,7 +28,7 @@ public class ScenarioTwo_Newsletter2go extends RESTAssuredBase {
 	@Test
 	public void getuserDetails() {
 
-		// Create New List
+		// Get User list
 		setLogs();
 		Response getAllUsers =get("users");
 	
