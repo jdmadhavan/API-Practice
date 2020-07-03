@@ -1,0 +1,11 @@
+{
+  "name": "bookmark",
+  "label": "MDN TestNew App8",
+  "signOnMode": "BOOKMARK",
+  "settings": {
+    "app": {
+      "requestIntegration": false,
+      "url": "https://example.com/bookmark.html"
+    }
+  }
+}
