@@ -1,0 +1,14 @@
+{
+  "channel": {
+    "id": "6686123681716651107"
+  },
+  "contact": {
+    "id": "6686123767297230112"
+  },
+ "content": {
+    "type": "file",
+    "payload": {
+      "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    }
+  }
+}

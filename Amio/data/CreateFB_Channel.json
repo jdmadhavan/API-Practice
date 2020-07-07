@@ -1,0 +1,10 @@
+{
+  "type": "facebook_messenger",
+  "name": "MDN Channel Four",
+  "mode": "production",
+  
+  "facebook_page": {
+    "id": "254080641931203",
+    "access_token": "EAAZAqmOEDma8BAOht17NZCOiBK0RhQbR6xUzfZAQi6ZBZAeQM0ZAvhkcTSWsRn3B2FZAL8yZBOPlJUrJ9kjqmZCF201YQR05h9eQc21uneS06qKre08KlQqCfjnugFQHFWoYKlFX8yLEL4MGlVs4ZCX91ybCKRewIhnSZCtHa32ZBM7j0QZDZD"
+  }
+}
