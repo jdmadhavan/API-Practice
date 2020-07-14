@@ -1,0 +1,10 @@
+{
+    "time_entry": {
+        "is_logged": true,
+        "duration": 7200,
+        "note": "MDN One",
+        "started_at": "2020-08-16T20:00:00.000Z",
+        "client_id": "2265",
+        "project_id": "4140887"
+    }
+}

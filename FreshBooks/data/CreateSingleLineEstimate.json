@@ -1,0 +1,23 @@
+{
+  "estimate": {
+    "email": "test@example.com",
+    "customerid": 2265,
+    "create_date": "2020-04-04",
+    "lines": [
+      {
+        "type": 0,
+        "description": "",
+        "taxName1": "",
+        "taxAmount1": 0,
+        "name": "Paperwork",
+        "qty": 1,
+        "taxName2": "",
+        "taxAmount2": 0,
+        "unit_cost": {
+            "amount": "5000.00",
+            "code": "USD"
+        }
+      }
+    ]
+  }
+}

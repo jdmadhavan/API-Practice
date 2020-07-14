@@ -1,0 +1,13 @@
+{
+  "time_entry": {
+      "is_logged": true,
+      "duration": 600,
+      "note": "Updated",
+      "started_at": "2020-08-16T18:03:28.000Z",
+      "timer": {
+          "id": "2936"
+      },
+      "client_id": "2265",
+      "project_id": "4140887"
+  }
+}
