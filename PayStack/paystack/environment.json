@@ -1,0 +1,14 @@
+{
+	"id": "7e078aec-ba3c-4712-803f-3e9104304218",
+	"name": "paystack",
+	"values": [
+		{
+			"key": "serverName",
+			"value": "api.paystack.co",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-07-23T17:50:35.632Z",
+	"_postman_exported_using": "Postman/7.28.0"
+}

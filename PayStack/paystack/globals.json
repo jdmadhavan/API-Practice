@@ -1,0 +1,59 @@
+{
+	"id": "146e52f0-fd32-4814-8e58-8a3c0f4d5eb7",
+	"values": [
+		{
+			"key": "variable_key",
+			"value": "variable_value",
+			"enabled": true
+		},
+		{
+			"key": "issueID",
+			"value": "11277",
+			"enabled": true
+		},
+		{
+			"key": "sys_Id_ChangeRequest",
+			"value": "36c22ba0db011010d178a455ca961945",
+			"enabled": true
+		},
+		{
+			"key": "newproductID",
+			"value": "PROD-5FM6028532133511C",
+			"enabled": true
+		},
+		{
+			"key": "X-Signature",
+			"value": "16ba30ff129c5651d1ea8457ffe6be05d839487fc7416630a9fba4bf7ca54168",
+			"enabled": true
+		},
+		{
+			"key": "authUiBank",
+			"value": "fwyDvVJ6GW8oMNYcM2wHBl52GOTjeQU6INHZ7loflE6FoEGHVRA1j1svH0X0ZKaK",
+			"enabled": true
+		},
+		{
+			"key": "adminKey",
+			"value": "nyInWF0JXrTL6f5aFJn1ZAngtRH0ZeaCpeN9ybAVJTcFnzZX",
+			"enabled": true
+		},
+		{
+			"key": "page_Id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "sub_Id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "emailToken",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-07-23T17:49:56.590Z",
+	"_postman_exported_using": "Postman/7.28.0"
+}

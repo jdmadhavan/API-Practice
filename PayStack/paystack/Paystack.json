@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "4fa7d630-30f1-4b5a-b87d-951d6f62f81e",
+		"name": "PayStack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Scenario One",
+			"item": [
+				{
+					"name": "CreateNew Payment Page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef219075-f18e-47d4-b95e-5597b0117905",
+								"exec": [
+									"\r",
+									"var res = pm.response.json();\r",
+									"var pid=res.data.id;\r",
+									"console.log(pid);\r",
+									"pm.globals.set(\"page_Id\", pid);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"JD Page\", \r\n  \"amount\": 500000,\r\n  \"description\": \"Gather your friends for the ritual that is brunch\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/page/",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"page",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Page and Verify new page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "91a4fbcf-d8a5-4cb3-b9c9-78570ef66de4",
+								"exec": [
+									"\r",
+									"var res = pm.response.json();\r",
+									"var pageid=pm.globals.get(\"page_Id\");\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pageid);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/page/",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"page",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get newly created page and verify",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce73118e-5cb6-4b46-8a53-6d3c9b8b0da0",
+								"exec": [
+									"\r",
+									"var res = pm.response.json();\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"JD Page\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/page/{{page_Id}}",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"page",
+								"{{page_Id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Scenario Two",
+			"item": [
+				{
+					"name": "CreateNew  Subscription",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e60640da-c054-4214-961b-b1eeb561fb52",
+								"exec": [
+									"var resp = pm.response.json();\r",
+									"var subId=resp.data.subscription_code;\r",
+									"console.log(subId)\r",
+									"pm.globals.set(\"sub_Id\", subId);\r",
+									"\r",
+									"var token=resp.data.email_token;\r",
+									"console.log(token);\r",
+									"pm.globals.set(\"emailToken\", token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"customer\": \"CUS_8d2njnrt30k6yo5\", \"plan\": \"PLN_t5dv7fqxa9315im\",\"authorization_code\": \"AUTH_oq8ayk9sxk\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/subscription/",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"subscription",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch and Verify Subscription",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c90d47c3-0ce1-4e2f-b5dd-e12bf8021505",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/subscription/{{sub_Id}}",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"subscription",
+								"{{sub_Id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Subscription",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41fa19b9-c48c-499a-9c3f-57500779bad6",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer sk_test_bcd336927df3c5d1a37aa5c8e0612ec6e6874348",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "{{sub_Id}}",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "{{emailToken}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{serverName}}/subscription/disable",
+							"protocol": "https",
+							"host": [
+								"{{serverName}}"
+							],
+							"path": [
+								"subscription",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a176bea6-4823-4576-8a27-52b76b957e01",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "69f18bff-2679-4528-8749-908ee41da96e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
